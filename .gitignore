@@ -9,6 +9,9 @@ node_modules/
 cloudinary_python.txt
 kaggle.json
 outputs/
+!outputs/03_modelling_and_evaluating/
+!outputs/03_modelling_and_evaluating/image_shape.pkl
+!outputs/03_modelling_and_evaluating/class_indices.pkl
 *.h5
 *.hdf5
 *.pkl
