@@ -5,11 +5,7 @@ from src.data_management import load_model_and_metadata
 from src.machine_learning.predictive_analysis import preprocess_uploaded_image, predict_from_array
 
 # Load model and metadata
-model, image_shape, class_indices = load_model_and_metadata(
-    "/workspaces/cherry-leaves-health/jupyter_notebooks/outputs/v1/cherry_leaf_mildew_model.h5",
-    "/workspaces/cherry-leaves-health/outputs/02_data_visualisation/image_shape.pkl",
-    "/workspaces/cherry-leaves-health/outputs/03_modelling_and_evaluating/class_indices.pkl"
-)
+model, image_shape, class_indices = load_model_and_metadata()
 
 def app():
     st.title("Predict Cherry Leaf Condition")
