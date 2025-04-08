@@ -5,6 +5,7 @@
 This project addresses a critical quality control issue for *Farmy & Foods*, a fictional agricultural company that specializes in cherry production. The company's cherry plantations are experiencing cases of **powdery mildew**, a fungal disease that affects the leaves and degrades product quality.
 
 The current manual inspection process is slow, costly, and not scalable. This project aims to:
+
 - **Visually differentiate** healthy and infected leaves.
 - **Predict mildew presence** using image classification.
 - **Deploy an interactive dashboard** for image upload and prediction.
@@ -25,6 +26,7 @@ By automating the detection process, *Farmy & Foods* can save inspection time, r
 ## Business Requirements
 
 ### Requirement 1: Visual Differentiation Study
+
 - Show how healthy and infected leaves differ using:
   - **Average images**
   - **Variability maps**
@@ -32,11 +34,13 @@ By automating the detection process, *Farmy & Foods* can save inspection time, r
 - Use conventional EDA techniques to support analysis.
 
 ### Requirement 2: Predictive ML Model
+
 - Build a neural network to classify cherry leaf images.
 - Prediction output: Healthy or Powdery Mildew with confidence score.
 - Model must reach at least **97% accuracy** on test set.
 
 ### Requirement 3: Deployment
+
 - Create an interactive dashboard for:
   - Uploading images
   - Viewing predictions and confidence
@@ -46,12 +50,15 @@ By automating the detection process, *Farmy & Foods* can save inspection time, r
 ## User Stories
 
 ### Epic 1: Data Understanding and Visualization
+
 - *As a data analyst*, I want to study the visual differences between healthy and mildew-infected leaves so I can better understand the problem.
 
 ### Epic 2: Predictive Model Development
+
 - *As a data scientist*, I want to train a neural network that predicts mildew so that the company can automate the inspection process.
 
 ### Epic 3: Dashboard for Business Use
+
 - *As an IT user*, I want to upload leaf images and receive instant predictions so I can act quickly in the field.
 
 ## ML Task & Business Case
@@ -70,11 +77,13 @@ By automating the detection process, *Farmy & Foods* can save inspection time, r
 ## Dashboard Pages & Design
 
 ### 1. **Project Summary**
+
 - Text overview of project context and objectives
 - Dataset summary and business requirements
 - Widget: Informational markdown
 
 ### 2. **Visual Differentiation Study**
+
 - Image montage (healthy vs infected)
 - Average and variability images per class
 - Difference between average class images
@@ -84,6 +93,7 @@ By automating the detection process, *Farmy & Foods* can save inspection time, r
 - Interpretation markdown and Streamlit `st.info`, `st.warning` for user guidance
 
 ### 3. **Mildew Detection Tool**
+
 - Image file uploader (multiple image support)
 - Inline preview of each uploaded image
 - Real-time class prediction with confidence score
@@ -91,12 +101,14 @@ By automating the detection process, *Farmy & Foods* can save inspection time, r
 - Widgets: File uploader, prediction table, download button
 
 ### 4. **Hypothesis & Validation**
+
 - Clearly stated hypothesis
 - Validation through visual inspection & model results
 - Qualitative and quantitative evaluation summary
 - Widget: Informational markdown and structured layout
 
 ### 5. **Model Performance**
+
 - Learning curves (accuracy/loss)
 - Confusion matrix and class distribution
 - Test metrics: accuracy, precision, recall, F1
@@ -145,36 +157,38 @@ This project is version-controlled using **Git & GitHub**. Commit messages follo
 
 The dataset comprises **cherry leaf images** from real plantations, labeled as either **healthy** or infected with **powdery mildew**, a common fungal disease. These images are standardized at 256×256 pixels and were collected by the IT & Innovation team at Farmy & Foods for the purpose of building a computer vision solution.
 
-
 ## Business Requirements
 
 As a Data Analyst working on behalf of Farmy & Foods, your role is to provide insights and a deployable solution to streamline disease detection in cherry leaves. Currently, the company is facing challenges with timely identification of mildew in large-scale plantations.
 
-* **Requirement 1:** The client seeks a visual study that helps differentiate healthy cherry leaves from those infected with powdery mildew.
-* **Requirement 2:** The client wants an automated prediction tool that identifies whether a leaf is healthy or diseased from an uploaded image.
-
+**Requirement 1:** The client seeks a visual study that helps differentiate healthy cherry leaves from those infected with powdery mildew.
+**Requirement 2:** The client wants an automated prediction tool that identifies whether a leaf is healthy or diseased from an uploaded image.
 
 ## Hypothesis and Validation
 
 We hypothesize that:
+
 - Cherry leaves affected by mildew present **distinct visual signs**, such as discoloration, texture changes, or fungal marks, which can be learned by a neural network.
+
 - These differences can be revealed via average image studies, variability analysis, and class montages.
 
 To validate:
+
 - We will generate average and variability images.
 - We will compare image statistics between healthy and mildew-infected classes.
 - We will train and evaluate a deep learning model.
 
-
 ## Rationale: Business Requirements → Visualizations & ML Tasks
 
 ### Business Requirement 1: Visual Differentiation Study
+
 - Display **mean and standard deviation images** per class.
 - Show the **difference between average healthy and infected images**.
 - Present **image montages** for each class to illustrate sample diversity.
 - Plot image dimension distribution and pixel intensity histogram.
 
 ### Business Requirement 2: Image Classification
+
 - Build a binary image classifier (CNN) to distinguish between classes.
 - Provide **real-time predictions** via a Streamlit dashboard.
 - Include **model performance evaluation** (confusion matrix, accuracy, confidence levels).
@@ -182,27 +196,32 @@ To validate:
 ## Dashboard Design (Streamlit App UI)
 
 ### Page 1: Project Summary
+
 - Overview of project goals and background.
 - Details about dataset origin and structure.
 - Clarification of business requirements and relevance.
 
 ### Page 2: Leaf Visualizer (Visual Differentiation Study)
+
 - For answering Business Requirement 1
   - Show average & variability image differences.
   - Highlight key visual signs using montages and overlays.
   - Show dimension distribution & intensity histogram.
 
 ### Page 3: Mildew Detector (Prediction Interface)
+
 - For answering Business Requirement 2
   - Upload multiple cherry leaf images.
   - Display prediction label and probability for each image.
   - Show prediction table + download option.
 
 ### Page 4: Hypothesis & Validation
+
 - Clearly list hypotheses.
 - Describe validation method and conclusions drawn from modeling and EDA.
 
 ### Page 5: ML Performance
+
 - Visualize class balance across splits.
 - Show model training history (accuracy/loss curves).
 - Provide test performance metrics and interpretation.
@@ -210,6 +229,7 @@ To validate:
 ## Deployment
 
 The app is deployed on Heroku using:
+
 - **Procfile** for command execution
 - **setup.sh** for installing system packages (e.g., Streamlit)
 - **runtime.txt** to specify Python version
@@ -234,12 +254,12 @@ The app is deployed on Heroku using:
 - **Kaggle**: Dataset source [Cherry Leaves Dataset](https://www.kaggle.com/codeinstitute/cherry-leaves)
 - **Stack Overflow**: For problem solving
 
-### The Sharp-Mind project draws inspiration from Code Institute preparation full stack project: 
+### The Sharp-Mind project draws inspiration from Code Institute preparation full stack project
 
 - [Code Institute, WalkthroughProject01 Malaria Detection Project](https://github.com/GyanShashwat1611/WalkthroughProject01)
 
-### Acknowledgments and Special Thanks to :
+### Acknowledgments and Special Thanks to
 
 ### Code Institute
 
-#### This project was developed as part of the Code Institute's Full Stack Software Development program.
+#### This project was developed as part of the Code Institute's Full Stack Software Development program
