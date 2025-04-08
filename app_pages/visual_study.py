@@ -18,11 +18,11 @@ def app():
     # Average & variability images
     if st.checkbox("Show Average and Variability Images"):
         st.image(
-            "/workspaces/cherry-leaves-health/outputs/02_data_visualisation/avg_var_healthy.png",
+            "outputs/02_data_visualisation/avg_var_healthy.png",
             caption="Healthy Leaf: Average & Variability",
         width=500)
         st.image(
-            "/workspaces/cherry-leaves-health/outputs/02_data_visualisation/avg_var_powdery_mildew.png",
+            "outputs/02_data_visualisation/avg_var_powdery_mildew.png",
             caption="Powdery Mildew Leaf: Average & Variability",
         width=500)
         st.info("There is a clear visual difference in texture and brightness between healthy and infected leaves.")
@@ -30,7 +30,7 @@ def app():
     # Difference between average images
     if st.checkbox("Show Difference Between Average Images"):
         st.image(
-            "/workspaces/cherry-leaves-health/outputs/02_data_visualisation/avg_diff.png",
+            "outputs/02_data_visualisation/avg_diff.png",
             caption="Difference Between Average Images",
         width=1000)
         st.warning("Although subtle, the darker and green-centered regions help differentiate mildew infection.")

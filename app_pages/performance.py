@@ -5,13 +5,13 @@ def app():
 
     st.markdown("### Accuracy Over Epochs")
     st.image(
-        "/workspaces/cherry-leaves-health/outputs/03_modelling_and_evaluating/training_accuracy.png",
+        "outputs/03_modelling_and_evaluating/training_accuracy.png",
         caption="Model Training Accuracy"
     )
 
     st.markdown("### Loss Over Epochs")
     st.image(
-        "/workspaces/cherry-leaves-health/outputs/03_modelling_and_evaluating/training_loss.png",
+        "outputs/03_modelling_and_evaluating/training_loss.png",
         caption="Model Training Loss"
     )
 
