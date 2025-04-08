@@ -8,3 +8,16 @@ node_modules/
 .github/
 cloudinary_python.txt
 kaggle.json
+outputs/
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+inputs/
+datasets/
+data/
+.ipynb_checkpoints/
+venv/
+.env/
+.DS_Store
+Thumbs.db
