@@ -9,39 +9,3 @@ node_modules/
 .github/
 cloudinary_python.txt
 kaggle.json
-
-# Ignore outputs folder...
-outputs/
-
-# ...but include model metadata files
-!outputs/03_modelling_and_evaluating/
-!outputs/03_modelling_and_evaluating/image_shape.pkl
-!outputs/03_modelling_and_evaluating/class_indices.pkl
-!outputs/02_data_visualisation/
-!outputs/02_data_visualisation/*.png
-!outputs/03_modelling_and_evaluating/labels_distribution.png
-!outputs/03_modelling_and_evaluating/training_accuracy.png
-!outputs/03_modelling_and_evaluating/training_loss.png
-
-# Large model files (ignored)
-*.h5
-*.hdf5
-
-# Keep only specific .pkl files — override ignore
-# So this must come AFTER the "keep" rules above
-*.pkl
-*.joblib
-
-# Data folders
-inputs/
-datasets/
-data/
-
-# Notebook artifacts
-.ipynb_checkpoints/
-
-# OS / env
-venv/
-.env/
-.DS_Store
-Thumbs.db
