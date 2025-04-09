@@ -1,5 +1,9 @@
 import streamlit as st
 from app_pages import home, visual_study, predictor, performance, hypothesis
+from src.data_management import download_sample_dataset
+
+# Ensure sample dataset is downloaded (for Heroku)
+download_sample_dataset()
 
 # Set up main navigation
 st.set_page_config(page_title="Cherry Leaf Mildew Detection", layout="wide")

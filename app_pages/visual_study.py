@@ -9,6 +9,8 @@ import itertools
 import io
 from PIL import Image as PILImage
 
+DATASET_BASE_PATH = "inputs/heroku_sample_data/train"
+
 def app():
     st.title("Visual Differentiation Study")
     st.markdown("""
@@ -35,7 +37,7 @@ def app():
         width=1000)
         st.warning("Although subtle, the darker and green-centered regions help differentiate mildew infection.")
 
-        # Image Montage Section
+    # Image Montage Section
     if st.checkbox("Generate Image Montage"):
         label_options = ["healthy", "powdery_mildew"]
         selected_label = st.selectbox("Select Leaf Condition", label_options)
@@ -44,11 +46,11 @@ def app():
         figsize_val = st.slider("Figure size (width, height)", 5, 20, (12, 10))
 
         if st.button("Create Montage"):
-            dir_path = os.path.join("inputs/cherry_leaves_split/train", selected_label)
+            dir_path = os.path.join(DATASET_BASE_PATH, selected_label)
 
             if os.path.exists(dir_path):
                 montage_buffer = image_montage(
-                    dir_path="inputs/cherry_leaves_split/train",
+                    dir_path=DATASET_BASE_PATH,
                     label=selected_label,
                     nrows=nrows, ncols=ncols,
                     figsize=figsize_val
@@ -65,7 +67,6 @@ def app():
             else:
                 st.error(f"Directory not found for the selected label: `{dir_path}`.\nThis feature is unavailable in the deployed version.")
 
-
     # Image dimension distribution
     if st.checkbox("Show Image Dimension Distribution"):
         label_dirs = ["healthy", "powdery_mildew"]
@@ -73,7 +74,7 @@ def app():
 
         dataset_available = True
         for lbl in label_dirs:
-            path = os.path.join("inputs/cherry_leaves_split/train", lbl)
+            path = os.path.join(DATASET_BASE_PATH, lbl)
             if os.path.exists(path):
                 for file in os.listdir(path):
                     img = imread(os.path.join(path, file))
@@ -94,11 +95,10 @@ def app():
         else:
             st.warning("    No image dimensions could be plotted. Dataset folders are missing in this environment.")
 
-
     # Image intensity histogram
     if st.checkbox("Show Image Intensity Histogram"):
         label = st.selectbox("Select Label for Histogram", ["healthy", "powdery_mildew"], key="hist")
-        path = os.path.join("inputs/cherry_leaves_split/train", label)
+        path = os.path.join(DATASET_BASE_PATH, label)
 
         if os.path.exists(path):
             pixel_values = []
@@ -119,7 +119,6 @@ def app():
 
         else:
             st.warning(f"Dataset folder not found: `{path}`.\nThis feature is unavailable in the deployed app.")
-
 
 def image_montage(dir_path, label, nrows, ncols, figsize=(12, 10)):
     sns_dir = os.path.join(dir_path, label)
